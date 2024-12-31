@@ -1,9 +1,9 @@
 ## iptables-manager
 在IPv4转发的基础上增加对于IPv6转发的支持<br>
-并且修改为用户自主选择转发协议是tcp还是udp<br>
-原版本来源：https://www.nodeseek.com/post-196550-1<br>
+支持tcp和udp<br>
 自用版本iptables双栈转发<br>
 在debian11上测试通过，但无法实现双栈互转，只能v4 to v4、v6 to v6<br>
+原版本来源：https://www.nodeseek.com/post-196550-1<br>
 ## 使用方法：
 
 ```
