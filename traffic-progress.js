@@ -79,9 +79,9 @@ const utils = (() => {
   }
 
   /**
-   * 根据百分比返回渐变HSL颜色（绿→橙→红）
+   * 根据百分比返回指定的HSL颜色
    * @param {number} percentage - 0~100的百分比
-   * @returns {string} hsl颜色字符串
+   * @returns {string} HSL颜色字符串
    */
   function getHslGradientColor(percentage) {
     const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
@@ -100,16 +100,7 @@ const utils = (() => {
       return GREEN_HSL;
     }
   }
-/**
- * 根据百分比返回指定的HSL颜色
- * @param {number} percentage - 0~100的百分比
- * @returns {string} HSL颜色字符串
- */
-function getHslGradientColor(percentage) {
-  const p = Math.max(0, Math.min(Number(percentage), 100));
 
-
-}
   /**
    * 透明度渐隐渐现切换内容
    * @param {HTMLElement} element - 目标元素
@@ -276,16 +267,16 @@ const trafficRenderer = (() => {
         // 启用切换时，将元素及其内容保存以便周期切换
         if (config.toggleInterval > 0) {
           const timeInfoElement = newElement.querySelector('.time-info');
-          if (timeInfoElement) {
-            toggleElements.push({
-              el: timeInfoElement,
-              contents
-            });
+            if (timeInfoElement) {
+              toggleElements.push({
+                el: timeInfoElement,
+                contents
+              });
+            }
           }
         }
-      }
-    });
-  }
+      });
+    }
 
   /**
    * 启动周期切换内容显示（用于时间、百分比等轮播）
